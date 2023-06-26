@@ -25,7 +25,6 @@ const playerList = ['Usuário', 'Rui', 'UmDois', 'Rugrats', 'Cebolo', 'Freio', '
 const bestOfList = ['1', '3', '5', '7'];
 
 //Vars
-
 var savedData;
 var df_compare;
 var xValues;
@@ -50,7 +49,7 @@ function changePlayer1Img () {
 }
 player1.addEventListener('input', changePlayer1Img);
 
-// //Input Player2
+//Input Player2
 function changePlayer2Img () {
     const value = player2.value;
     if (playerList.includes(value)) {
@@ -68,7 +67,7 @@ function changePlayer2Img () {
 }
 player2.addEventListener('input', changePlayer2Img);
 
-// //Input Winner
+//Input Winner
 function changeWinnerImg () {
     const value = winner.value;
     if (playerList.includes(value) && (value == player2.value || value == player1.value) ) {
@@ -86,7 +85,7 @@ function changeWinnerImg () {
 }
 winner.addEventListener('input', changeWinnerImg);
 
-// //Input Best Of
+//Input Best Of
 function changeBestOfImg () {
     const value = bestOf.value;
     if (bestOfList.includes(value)) {
@@ -123,7 +122,7 @@ function changeBestOfImg () {
 }
 bestOf.addEventListener('input', changeBestOfImg);
 
-// //Add Button handler
+//Add Button handler
 addButtom.addEventListener('click', function() {
     if (playerList.includes(player1.value) && playerList.includes(player2.value) && playerList.includes(winner.value) && bestOfList.includes(bestOf.value)) {
       addRow();
@@ -196,6 +195,7 @@ function addTable() {
   //document.body.appendChild(tableTemplate);
 }
 
+//Add the scoreBoard
 function addScoreBoard () {
   const table = document.createElement('table');
   table.classList.add('hiddenTable');
@@ -226,7 +226,7 @@ function addScoreBoard () {
   tableTemplate.appendChild(table);  
 };
 
-// //Add Row Function
+//Add Row Function
 function addRow() {
     // Create a new row object
     var newRow = {
@@ -253,7 +253,7 @@ function addRow() {
       });
 };
 
-// //Score Board Function
+//Score Board Function
 function scoreboard(data_frame) {
     var df = data_frame;
     var tuples = [...new Set(df.map(row => row['Players']))];
@@ -295,7 +295,7 @@ function scoreboard(data_frame) {
     return df_compare;
 }
 
-// //Score Board with the Time Stamps and GameData separated by Time Stamp
+//Score Board with the Time Stamps and GameData separated by Time Stamp
 function scoreboard_ts (data_frame) {
     var time_stamps = [...new Set(data_frame.map(row => row['Time Stamp']))];
     var dfs_compare_by_time_stamp = {};
@@ -510,7 +510,7 @@ window.onbeforeunload = function() {
 };
 
 
-// // //Tables togle
+//Tables togle
 gamesTable.addEventListener('click', function() {
     document.querySelectorAll('.table')[0].classList.remove('hiddenTable');
     document.querySelectorAll('.table')[1].classList.add('hiddenTable');
@@ -540,7 +540,6 @@ ratioButton.addEventListener('click', function() {
 });
 
 //Place Player Photo for statistical template
-
 function placeStatPhotos(data_frame) {
   var df = data_frame;
   var tuples = [...new Set(df.map(row => row['Players']))];
@@ -562,7 +561,6 @@ function placeStatPhotos(data_frame) {
 }
 
 //Stats Player Selection
-
 function statPlayerSelection() {
   const photos = document.querySelectorAll('.statPhoto');
   const selectedPhotos = [];
@@ -586,7 +584,6 @@ function statPlayerSelection() {
 
 
 //Getting the data from the database.db
-
 async function getData() {
   const response = await fetch('http://localhost:3000/data');
   const data = await response.json();
