@@ -1,0 +1,33 @@
+{
+  "name": "snuquinha",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000i\u0000n\u0000u\u0000c\u0000a\u0000 \u0000R\u0000e\u0000s\u0000s\u0000a\u0000c\u0000a\u0000\r\u0000 \u0000A\u0000p\u0000p\u0000 \u0000t\u0000o\u0000 \u0000k\u0000e\u0000e\u0000p\u0000 \u0000t\u0000r\u0000a\u0000c\u0000k\u0000 \u0000a\u0000n\u0000d\u0000 \u0000d\u0000o\u0000 \u0000s\u0000t\u0000a\u0000t\u0000i\u0000s\u0000t\u0000i\u0000c\u0000a\u0000l\u0000 \u0000a\u0000n\u0000a\u0000l\u0000y\u0000s\u0000i\u0000s\u0000 \u0000f\u0000r\u0000o\u0000m\u0000 \u0000a\u0000l\u0000l\u0000 \u0000S\u0000i\u0000n\u0000u\u0000c\u0000a\u0000 \u0000g\u0000a\u0000m\u0000e\u0000s\u0000 \u0000p\u0000l\u0000a\u0000y\u0000e\u0000d\u0000 \u0000a\u0000t\u0000 \u0000m\u0000y\u0000 \u0000f\u0000r\u0000a\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^0.2.10",
+    "axios": "^1.4.0",
+    "binary-search-tree": "^0.2.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "immediate": "^3.0.6",
+    "lie": "^3.1.1",
+    "localforage": "^1.10.0",
+    "minimist": "^1.2.8",
+    "mkdirp": "^0.5.6",
+    "nedb": "^1.8.0",
+    "underscore": "^1.4.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueFStephan/Sinuca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueFStephan/Sinuca/issues"
+  },
+  "homepage": "https://github.com/HenriqueFStephan/Sinuca#readme"
+}

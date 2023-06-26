@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sinuquinha RR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+</head>
+<body>
+    <header id="header">
+        <div id="title"><h2>Sinuquinha da Ressaca</h2></div>
+    </header>
+    <main id="main">
+        <div class="card">
+            <h3 class="cardTitle">Adicionar Jogo /<br>Remover Jogo</h3>
+            <div class="cardDivision"></div>
+            <div class="cardElements">
+                <button class="svgHolder">
+                    <a href="#addGamePage">
+                        <svg id="plusIcon">
+                            <use xlink:href="#plus"></use>
+                        </svg>
+                    </a>
+                </button>
+                <button class="svgHolder">
+                    <svg id="minusIcon">
+                        <use xlink:href="#minus"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="cardTitle">Tabelas</h3>
+            <div class="cardDivision"></div>
+            <div class="cardElements">
+                <button class="svgHolder">
+                  <a href="#tableSelection">
+                    <svg id="tableIcon">
+                        <use xlink:href="#table"></use>
+                    </svg>
+                  </a>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+            <h3 class="cardTitle">Gráficos</h3>
+            <div class="cardDivision"></div>
+            <div class="cardElements">
+                <button class="svgHolder">
+                  <a href="#chartSelection">
+                    <svg id="graphIcon">
+                        <use xlink:href="#graph"></use>
+                    </svg>
+                  </a>
+                </button>
+            </div>
+        </div>
+    </main>
+    <section id="addGamePage">
+        <div class="selectValuesTemp">
+            <input type="text" class="addData" placeholder="Jogador 1" id="player1">
+            <input type="text" class="addData" placeholder="Jogador 2" id="player2">
+            <input type="text" class="addData" placeholder="Vencedor" id="winner">
+            <input type="text" class="addData" placeholder="Numero de Jogos" id="bestOf"> 
+        </div>
+        <div class="selectValuesTemp">
+            <div class="selectedImg" id="player1Img"></div>
+            <div class="selectedImg" id="player2Img"></div>
+            <div class="selectedImg" id="winnerImg"></div>
+            <div class="selectedImg" id="bestOfImg"></div>
+        </div>
+        <div class="confirmGameTemplate">
+            <button type="text" class="addData" id="confirmGame"><span>Submit</span></button>
+        </div>
+        <div class="circle"></div>
+        <svg id="svgWinner">
+          <filter id="wavy">
+            <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" speed="2">
+              <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite">
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+          </filter>
+        </svg>
+    </section>
+    <div class="tableSelector" id="tableSelection">
+      <button id="gamesTable" class="tableButton">Tabela de Jogos</button>
+      <button id="scoreBoard" class="tableButton">Score Board</button>
+    </div>
+    <div class="tableTemplate"></div>
+    <div class="chartSelector" id="chartSelection">
+      <button id="scoreBars" class="tableButton">Score Bars</button>
+      <button id="scoreChart" class="tableButton">Score Chart</button>
+      <button id="ratioChart" class="tableButton">Ratio Chart</button>
+    </div>
+    <div class="chartTemplate">
+      <div class="scoreBarsTemplate" id="scoreBarsTemplate"></div>
+      <canvas id="myChartRatio" class="hiddenTable"></canvas>
+      <canvas id="myChartScore" class="hiddenTable"></canvas>
+    </div>
+
+    <div class="analisesParticulares">
+      <div class="statPhotos"></div>
+    </div>
+    
+    
+    
+
+    <svg width="0" height="0" class="hidden" id="svgPuls">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="plus">
+          <path id="pathPlus" clip-rule="evenodd" d="M10.4269 2.42148C11.4003 1.85951 12.5996 1.8595 13.573 2.42148L19.5087 5.84848C20.4821 6.41046 21.0817 7.44904 21.0817 8.573V15.427C21.0817 16.551 20.4821 17.5895 19.5087 18.1515L13.573 21.5785C12.5996 22.1405 11.4003 22.1405 10.4269 21.5785L4.49122 18.1515C3.51784 17.5895 2.91821 16.551 2.91821 15.427V8.573C2.91821 7.44904 3.51784 6.41046 4.49122 5.84848L10.4269 2.42148ZM15.75 12C15.75 12.4142 15.4142 12.75 15 12.75H12.75V15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15V12.75H9C8.58579 12.75 8.25 12.4142 8.25 12C8.25 11.5858 8.58579 11.25 9 11.25H11.25V9C11.25 8.58579 11.5858 8.25 12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V11.25H15C15.4142 11.25 15.75 11.5858 15.75 12Z" fill="hsl(193, 47%, 38%)" fill-rule="evenodd"></path>
+        </symbol>
+      </svg>
+
+      <svg width="0" height="0" class="hidden">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="minus">
+          <path id="pathMinus" clip-rule="evenodd" d="M13.573 2.42148C12.5996 1.8595 11.4003 1.85951 10.4269 2.42148L4.49122 5.84848C3.51784 6.41046 2.91821 7.44904 2.91821 8.573V15.427C2.91821 16.551 3.51784 17.5895 4.49122 18.1515L10.4269 21.5785C11.4003 22.1405 12.5996 22.1405 13.573 21.5785L19.5087 18.1515C20.4821 17.5895 21.0817 16.551 21.0817 15.427V8.573C21.0817 7.44904 20.4821 6.41046 19.5087 5.84848L13.573 2.42148ZM15 12.75C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H15Z" fill="#000000" fill-rule="evenodd"></path>
+        </symbol>
+      </svg>
+
+      <svg width="0" height="0" class="hidden">
+        <symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="table">
+          <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2M3 8v6m0-6h6m12 0v6m0-6H9m12 6v4a2 2 0 0 1-2 2H9m12-6H9m-6 0v4a2 2 0 0 0 2 2h4m-6-6h6m0-6v6m0 0v6m6-12v12"></path>
+          <path fill="#000000" d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2H3V6z"></path>
+        </symbol>
+      </svg>
+
+      <svg width="0" height="0" class="hidden">
+        <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlnsSketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 24 24" id="graph">
+          <title>icon/24/icon-graph</title>
+          <desc>Created with Sketch.</desc>
+          <defs></defs>
+          <g id="out" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketchType="MSPage">
+            <path d="M19,3 L5,3 C3.9,3 3,3.9 3,5 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,5 C21,3.9 20.1,3 19,3 L19,3 L19,3 Z M9,17 L7,17 L7,10 L9,10 L9,17 L9,17 L9,17 Z M13,17 L11,17 L11,7 L13,7 L13,17 L13,17 L13,17 Z M17,17 L15,17 L15,13 L17,13 L17,17 L17,17 L17,17 Z" id="pathGraph" fill="#000000" sketchType="MSShapeGroup"></path>
+          </g>
+        </symbol>
+      </svg>
+
+
+</body>
+<script src="index.js" type="module"></script>
+</html>
